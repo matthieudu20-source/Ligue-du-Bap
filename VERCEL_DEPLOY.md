@@ -2,7 +2,7 @@
 
 ## Variables d'environnement requises
 
-Dans les paramètres de votre projet Vercel, configurez les variables d'environnement suivantes :
+Dans les paramètres de votre projet Vercel (Settings → Environment Variables), configurez les variables d'environnement suivantes :
 
 ### DATABASE_URL
 **Important** : SQLite ne fonctionne pas sur Vercel. Vous devez utiliser PostgreSQL.
@@ -16,6 +16,11 @@ Format : `postgresql://user:password@host:5432/database?schema=public`
 
 ### NODE_ENV
 Définissez `NODE_ENV=production` pour la production.
+
+### PUPPETEER_SKIP_CHROMIUM_DOWNLOAD (Optionnel mais recommandé)
+Définissez `PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true` pour éviter le téléchargement de Chromium pendant le build (réduit le temps de build).
+
+**Note** : Sur Vercel, Puppeteer nécessitera Chromium au runtime. Vous devrez peut-être utiliser `@sparticuz/chromium` pour les fonctions serverless.
 
 ## Migration de la base de données
 
