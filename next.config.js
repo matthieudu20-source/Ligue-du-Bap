@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   typescript: {
+    // Ignorer les erreurs TypeScript pendant le build (utile pour Vercel)
     ignoreBuildErrors: true,
   },
   // Empêcher Next.js d'essayer de bundler Puppeteer
