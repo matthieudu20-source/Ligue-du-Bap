@@ -64,8 +64,17 @@ export async function POST(request: NextRequest) {
     return response;
   } catch (error) {
     console.error("Erreur lors de la connexion:", error);
+    const errorMessage = error instanceof Error ? error.message : String(error);
+    const errorStack = error instanceof Error ? error.stack : undefined;
+    
     return NextResponse.json(
-      { error: "Une erreur est survenue lors de la connexion" },
+      { 
+        error: "Une erreur est survenue lors de la connexion",
+        ...(process.env.NODE_ENV === "development" && { 
+          details: errorMessage,
+          stack: errorStack 
+        }),
+      },
       { status: 500 }
     );
   }
