@@ -1,0 +1,7 @@
+-- AlterTable
+ALTER TABLE "Match" ADD COLUMN "set1Player1Score" INTEGER;
+ALTER TABLE "Match" ADD COLUMN "set1Player2Score" INTEGER;
+ALTER TABLE "Match" ADD COLUMN "set2Player1Score" INTEGER;
+ALTER TABLE "Match" ADD COLUMN "set2Player2Score" INTEGER;
+ALTER TABLE "Match" ADD COLUMN "set3Player1Score" INTEGER;
+ALTER TABLE "Match" ADD COLUMN "set3Player2Score" INTEGER;
