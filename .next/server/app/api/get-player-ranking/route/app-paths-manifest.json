@@ -1,0 +1,3 @@
+{
+  "/api/get-player-ranking/route": "app/api/get-player-ranking/route.js"
+}

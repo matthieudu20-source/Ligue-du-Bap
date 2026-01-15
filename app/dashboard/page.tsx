@@ -540,7 +540,7 @@ export default function DashboardPage() {
                       <div className="text-slate-100 font-medium">
                         {rankingData.maillots.points.nickname}
                         <span className="text-sm text-slate-400 ml-2">
-                          ({rankingData.maillots.points.count} victoire{rankingData.maillots.points.count > 1 ? "s" : ""})
+                          ({rankingData.maillots.points.count ?? 0} victoire{(rankingData.maillots.points.count ?? 0) > 1 ? "s" : ""})
                         </span>
                       </div>
                     ) : (
@@ -563,7 +563,7 @@ export default function DashboardPage() {
                       <div className="text-slate-100 font-medium">
                         {rankingData.maillots.vert.nickname}
                         <span className="text-sm text-slate-400 ml-2">
-                          ({rankingData.maillots.vert.wins} victoire{rankingData.maillots.vert.wins > 1 ? "s" : ""})
+                          ({rankingData.maillots.vert.wins ?? 0} victoire{(rankingData.maillots.vert.wins ?? 0) > 1 ? "s" : ""})
                         </span>
                       </div>
                     ) : (
@@ -586,7 +586,7 @@ export default function DashboardPage() {
                       <div className="text-slate-100 font-medium">
                         {rankingData.maillots.blanc.nickname}
                         <span className="text-sm text-slate-400 ml-2">
-                          ({rankingData.maillots.blanc.matchCount} match{rankingData.maillots.blanc.matchCount > 1 ? "s" : ""})
+                          ({rankingData.maillots.blanc.matchCount ?? 0} match{(rankingData.maillots.blanc.matchCount ?? 0) > 1 ? "s" : ""})
                         </span>
                       </div>
                     ) : (

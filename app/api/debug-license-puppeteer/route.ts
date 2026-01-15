@@ -45,7 +45,8 @@ export async function GET(request: NextRequest) {
         // Continue
       }
 
-      await page.waitForTimeout(5000);
+      // Attendre 5 secondes
+      await new Promise(resolve => setTimeout(resolve, 5000));
 
       // Récupérer toutes les informations possibles
       const pageData = await page.evaluate(() => {
@@ -87,7 +88,6 @@ export async function GET(request: NextRequest) {
 
       return NextResponse.json({
         licenseNumber,
-        url: playerUrl,
         ...pageData,
       });
     } catch (pageError) {
